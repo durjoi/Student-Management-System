@@ -1,42 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Student Management System</title>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-  </head>
-  <body>
+@extends('master')
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="#">Student Management System</a>
-      <button class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarCollapse"
-              aria-controls="navbarCollapse"
-              aria-expanded="false"
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Create</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="container">
+@section('content')
+  <table class="table table-hover">
+      <tr>
+        <th>SL</th>
+        <th>Registration ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Information</th>
+        <th>Action</th>
+      </tr>
+      @php $i = 0; @endphp
       @foreach ($students as $student)
-        {{ $student->name }}
+        <tr>
+          @php $i++ @endphp
+          <td>{{ $i }}</td>
+          <td>{{ $student->registration_id }}</td>
+          <td>{{ $student->name }}</td>
+          <td>{{ $student->department_name }}</td>
+          <td>{{ $student->info }}</td>
+          <td>
+            <a href="#" class="btn btn-success">Edit</a>
+          </td>
+        </tr>
       @endforeach
-    </div>
-
-
-    <script type="text/javascript" src=" {{ asset('js/bootstrap.min.js') }} "></script>
-  </body>
-</html>
+  </table>
+@endsection
