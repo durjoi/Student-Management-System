@@ -2,7 +2,7 @@
 @section('content')
   <div class="row">
     <div class="col-4 offset-4">
-      <form class="student-registration" action="{{ route('store') }}" method="post">
+      <form class="student-registration" action="{{ route('update',$student->id) }}" method="post">
         {{ csrf_field() }}
         <table>
           <tr>
@@ -10,7 +10,7 @@
               <label for="name">Name:</label>
             </td>
             <td>
-              <input type="text" name="name" id="name">
+              <input type="text" name="name" id="name" value="{{ $student->name }}">
             </td>
           </tr>
           <tr>
@@ -18,7 +18,7 @@
               <label for="registration_id">Registration Id:</label>
             </td>
             <td>
-              <input type="text" name="registration_id" id="registration_id">
+              <input type="text" name="registration_id" id="registration_id" value="{{ $student->registration_id }}">
             </td>
           </tr>
           <tr>
@@ -26,7 +26,7 @@
               <label for="department_name">Department:</label>
             </td>
             <td>
-              <input type="text" name="department_name" id="department_name">
+              <input type="text" name="department_name" id="department_name" value="{{ $student->department_name }}">
             </td>
           </tr>
           <tr>
@@ -34,13 +34,13 @@
               <label for="info">Personal Information:</label>
             </td>
             <td>
-              <textarea name="info" id="info" row="10"></textarea>
+              <textarea name="info" id="info" row="10">{!! $student->info !!}</textarea>
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <button type="submit" name="button" class="btn btn-success">Register Student</button>
+              <button type="submit" name="button" class="btn btn-success">Save Student</button>
             </td>
           </tr>
 

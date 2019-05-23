@@ -20,7 +20,7 @@
           <td>{{ $student->department_name }}</td>
           <td>{{ $student->info }}</td>
           <td>
-            <a href="#" class="btn btn-success">Edit</a>
+            <a href="{{ route('edit',$student->id) }}" class="btn btn-success">Edit</a>
           </td>
         </tr>
       @endforeach

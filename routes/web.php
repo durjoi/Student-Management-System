@@ -14,3 +14,5 @@
 Route::get('/','studentController@index')->name('index');
 Route::get('/create','studentController@create')->name('create');
 Route::post('/store','studentController@store')->name('store');
+Route::get('/edit/{id}','studentController@edit')->name('edit');
+Route::post('/update/{id}','studentController@update')->name('update');
