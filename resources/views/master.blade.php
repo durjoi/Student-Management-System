@@ -8,7 +8,7 @@
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-      <a class="navbar-brand" href="#">Student Management System</a>
+      <a class="navbar-brand" href="#">#</a>
       <button class="navbar-toggler"
               type="button"
               data-toggle="collapse"

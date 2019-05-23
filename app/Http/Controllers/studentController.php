@@ -18,6 +18,13 @@ class studentController extends Controller
     }
     public function store(Request $request)
     {
+
+        $request->validate([
+          'name' => 'required|string',
+          'registration_id' => 'required|integer',
+          'department_name' => 'required|string',
+          'info' => 'nullable'
+        ]);
         $student = new Student;
         $student->name = $request->name;
         $student->registration_id = $request->registration_id;
@@ -29,6 +36,12 @@ class studentController extends Controller
     }
     public function update(Request $request, $id)
     {
+      $request->validate([
+        'name' => 'required|string',
+        'registration_id' => 'required|integer',
+        'department_name' => 'required|string',
+        'info' => 'nullable'
+      ]);
         $student = Student::find($id);
         $student->name = $request->name;
         $student->registration_id = $request->registration_id;

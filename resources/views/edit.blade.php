@@ -1,5 +1,10 @@
 @extends('master')
 @section('content')
+  <div class="row mb-3">
+    <div class="col-12 text-center">
+      <h2>Edit Student Information</h2>
+    </div>
+  </div>
   <div class="row">
     <div class="col-4 offset-4">
       <form class="student-registration" action="{{ route('update',$student->id) }}" method="post">
@@ -10,7 +15,10 @@
               <label for="name">Name:</label>
             </td>
             <td>
-              <input type="text" name="name" id="name" value="{{ $student->name }}">
+              <input type="text" name="name" id="name" value="{{ $student->name }}" required>
+              @error('name')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </td>
           </tr>
           <tr>
@@ -18,7 +26,10 @@
               <label for="registration_id">Registration Id:</label>
             </td>
             <td>
-              <input type="text" name="registration_id" id="registration_id" value="{{ $student->registration_id }}">
+              <input type="text" name="registration_id" id="registration_id" value="{{ $student->registration_id }}" required>
+              @error('registration_id')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </td>
           </tr>
           <tr>
@@ -26,7 +37,10 @@
               <label for="department_name">Department:</label>
             </td>
             <td>
-              <input type="text" name="department_name" id="department_name" value="{{ $student->department_name }}">
+              <input type="text" name="department_name" id="department_name" value="{{ $student->department_name }}" required>
+              @error('department_name')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </td>
           </tr>
           <tr>
