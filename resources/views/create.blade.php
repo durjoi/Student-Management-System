@@ -1,10 +1,10 @@
 @extends('master')
 @section('content')
   <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-4 offset-4">
       <form class="studen-registration" action="{{ route('store') }}" method="post">
         {{ csrf_field() }}
-        <table style="width: 100%">
+        <table>
           <tr>
             <td>
               <label for="name">Name:</label>
