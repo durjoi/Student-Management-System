@@ -44,4 +44,12 @@ class studentController extends Controller
         $student = Student::find($id);
         return view('edit')->with('student', $student);
     }
+    public function delete($id)
+    {
+
+        $student = Student::find($id);
+        $student->delete();
+
+        return redirect()->route('index');
+    }
 }
