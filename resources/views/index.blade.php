@@ -1,6 +1,11 @@
 @extends('master')
 
 @section('content')
+  <div class="row mb-3">
+    <div class="col-12 text-center">
+      <h2>Student Management Table</h2>
+    </div>
+  </div>
   <table class="table table-hover">
       <tr>
         <th>SL</th>
@@ -29,4 +34,9 @@
         </tr>
       @endforeach
   </table>
+  <div class="row">
+    <div class="col-12 text-center">
+      <a href="{{ route('create') }}" class="btn btn-success mt-2">Add New Student</a>
+    </div>
+  </div>
 @endsection
