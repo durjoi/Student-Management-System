@@ -17,3 +17,7 @@ Route::post('/store','studentController@store')->name('store');
 Route::get('/edit/{id}','studentController@edit')->name('edit');
 Route::post('/update/{id}','studentController@update')->name('update');
 Route::post('/delete/{id}','studentController@delete')->name('delete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
