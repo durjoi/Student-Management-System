@@ -12,9 +12,9 @@
 */
 
 Route::get('/','studentController@index')->name('index')->middleware('auth');
-Route::get('/create','studentController@create')->name('create');
+Route::get('/create','studentController@create')->name('create')->middleware('auth');
 Route::post('/store','studentController@store')->name('store');
-Route::get('/edit/{id}','studentController@edit')->name('edit');
+Route::get('/edit/{id}','studentController@edit')->name('edit')->middleware('auth');
 Route::post('/update/{id}','studentController@update')->name('update');
 Route::post('/delete/{id}','studentController@delete')->name('delete');
 
