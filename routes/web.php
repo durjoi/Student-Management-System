@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','studentController@index')->name('index');
+Route::get('/','studentController@index')->name('index')->middleware('auth');
 Route::get('/create','studentController@create')->name('create');
 Route::post('/store','studentController@store')->name('store');
 Route::get('/edit/{id}','studentController@edit')->name('edit');
